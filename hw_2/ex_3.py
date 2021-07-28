@@ -16,10 +16,10 @@
 
 # Решение №3
 def reverse_num(num):
-    if num == 1:
-        return str(num % 10)
+    if len(num) == 1:
+        return num[-1]
     else:
-        return str(num % 10) + str(reverse_num(num // 10))
+        return num[-1] + reverse_num(num[:-1])
 
 
-print(reverse_num(123))
+print(reverse_num(str(input('Введите число: '))))
